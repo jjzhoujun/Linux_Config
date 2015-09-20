@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/dreamfly/ProgramFiles/jdk1.8.0._05'
+let g:netrw_dirhist_2='/home/dreamfly/ProgramFiles'
+let g:netrw_dirhist_3='/home/dreamfly/sshfs_RTD2982/RTD2982/product_lastest/product/kernel/android/KK/device/realtek/app/CVTTvSetting/src/com/tsb/tv'
+let g:netrw_dirhist_4='/home/dreamfly/.vim'

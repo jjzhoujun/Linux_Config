@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/shundao/.vim'
+let g:netrw_dirhist_2='/home/shundao/workspace/HDFS4HBaseHA/src/com/ha'
+let g:netrw_dirhist_3='/home/shundao/hadoop/mapred/org/apache/hadoop/mapred'
