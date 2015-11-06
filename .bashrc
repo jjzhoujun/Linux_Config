@@ -114,9 +114,12 @@ if ! shopt -oq posix; then
 fi
 
 
-# for java
-JAVA_HOME=/home/jayden/ProgramFiles/jdk1.6.0_45
-JAVA_JRE=/home/jayden/ProgramFiles/jdk1.6.0_45/jre
+# for java1.6 to compile Android4.4. Such as RTK.
+#JAVA_HOME=/home/jayden/ProgramFiles/jdk1.6.0_45
+#JAVA_JRE=/home/jayden/ProgramFiles/jdk1.6.0_45/jre
+# for java1.7 to compile Android5.0. Such Hisi.
+JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+JAVA_JRE=/usr/lib/jvm/java-7-openjdk-amd64/jre
 PATH=$PATH:$JAVA_HOME/bin:$JAVA_JRE/bin
 CLASSPATH=.:$JAVA_HOME/lib:$JAVA_JRE/lib
 export JAVA_HOME
@@ -124,11 +127,28 @@ export JAVA_JRE
 export PATH
 export CLASSPATH
 
+#Cross path for Hisi., This will set JAVA1.7 Path .
+HI_CO_64=/opt/hisi-linux/arm64/aarch64-linux-gnu/bin
+HI_CO=/opt/hisi-linux
+HI_32=/opt/hisi-linux/x86-arm/arm-hisiv200-linux/bin
+HI_32_TAR=/opt/hisi-linux/x86-arm/arm-hisiv200-linux/target/bin
+PATH=$PATH:$HI_CO_64:$HI_CO:$HI_32:$HI_32_TAR
+export PATH
+
+umask 022
+###### Change to 1.6 Need to delete this ln 
+#jayden@X250:trunk_dtmb$ sudo ln -s /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java /usr/lib/jvm/java-7-openjdk-amd64/bin/java
+#jayden@X250:trunk_dtmb$ ll /usr/lib/jvm/java-7-openjdk-amd64/bin/java
+#lrwxrwxrwx 1 root root 46 Oct 21 22:16 /usr/lib/jvm/java-7-openjdk-amd64/bin/java -> /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java*
+
+
 # for android
 ANDROID_PLATFORM_TOOLS=/home/jayden/ProgramFiles/Android_Tool/sdk/platform-tools
 ANDROID_TOOLS=/home/jayden/ProgramFiles/Android_Tool/sdk/tools
+ANDROID_NDK=/home/jayden/ProgramFiles/Android_Tool/android-ndk-r10e
 GRADLE=/home/jayden/ProgramFiles/Android_Tool/gradle-2.3/bin
-PATH=$PATH:$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS:$GRADLE
+#GRADLE=/home/jayden/ProgramFiles/Android_Tool/gradle-2.0/bin
+PATH=$PATH:$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS:$ANDROID_NDK:$GRADLE
 CLASSPATH=.:$ANDROID_TOOLS/lib
 export ANDROID_PLATFORM_TOOLS
 export ANDROID_TOOLS
@@ -138,3 +158,7 @@ export CLASSPATH
 
 export LANGUAGE=en_HK:en
 export LC_ALL=en_US.UTF-8
+
+# Notify long time task.
+#. /usr/share/undistract-me/long-running.bash
+#notify_when_long_running_commands_finish_install

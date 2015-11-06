@@ -159,13 +159,12 @@ nmap <silent> <Leader>,d :cs find d <C-R>=expand("<cword>")<CR><CR>
 "	 let g:LookupFile_TagExpr = '"/84T/filenametags"'
 "endif
 
-if filereadable("/82/filenametags")
-	 let g:LookupFile_TagExpr = '"/82/filenametags"'
+if filereadable("/hi/filenametags")
+	 let g:LookupFile_TagExpr = '"/hi/filenametags"'
 endif
 
-au BufEnter /84T/*
-au BufEnter /82/*
-au BufEnter /home/jayden/ProgramFiles/Code/RTD298X/MS818/*
+"au BufEnter /82/*
+au BufEnter /hi/*
  
  nmap <silent> <Leader>lf <Plug>LookupFile<CR>
  nnoremap <silent> <Leader>lb :LUBufs<CR>
@@ -244,7 +243,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " ==========================>>>>>>>>>>>>>>> YCM
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 
 set fileformats=unix,dos
 set ts=4
